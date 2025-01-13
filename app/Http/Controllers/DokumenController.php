@@ -93,8 +93,6 @@ class DokumenController extends Controller
             'akte' => $data['akte'] ?? null,
         ]);
 
-        // notify()->success('Dokumen berhasil diunggah.');
-        // return redirect()->route('dashboard');
         // Menyimpan notifikasi untuk ditampilkan dengan SweetAlert
         return redirect()->route('dashboard')->with('success', 'Anda berhasil mendaftar di SMK VIP MAARIF NU 1 KEMIRI.');
     }

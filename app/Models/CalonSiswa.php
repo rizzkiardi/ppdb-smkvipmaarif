@@ -13,10 +13,6 @@ class CalonSiswa extends Model
     protected $table = 'calon_siswa';
     protected $guarded = [];
     protected $dates = ['tgl_lahir'];
-    // public function status():BelongsTo
-    // {
-    //     return $this->belongsTo(CalonSiswa::class);
-    // }
 
     public static function boot()
     {

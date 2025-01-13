@@ -268,18 +268,6 @@
                     const notificationId = this.getAttribute('data-id');
                     const redirectUrl = this.getAttribute('data-url');
 
-                    // Hapus elemen notifikasi dari tampilan
-                    // const notificationElement = document.getElementById(`notification-${notificationId}`);
-                    // if (notificationElement) {
-                    //     notificationElement.remove();
-                    // }
-
-                    // Periksa apakah masih ada notifikasi
-                    // const notificationList = document.getElementById('notification-list');
-                    // if (!notificationList.querySelector('li')) {
-                    //     notificationList.innerHTML = '<li class="text-gray-500">Tidak ada notifikasi.</li>';
-                    // }
-
                     // Redirect ke halaman tujuan
                     window.location.href = redirectUrl;
                 });

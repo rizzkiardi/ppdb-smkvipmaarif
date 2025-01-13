@@ -63,9 +63,6 @@ class DaftarUlangController extends Controller
             'bukti_pembayaran.required' => 'Bukti pembayaran wajib diunggah',
             'bukti_pembayaran.image' => 'Bukti pembayaran harus berupa gambar',
         ]);
-
-        // Membuat nama file dengan string acak 20 karakter
-        // $fileName = Str::random(20) . '.' . $request->bukti_pembayaran->extension();
     
         // Membuat nama file berdasarkan waktu
         $file = 'bukti_pembayaran';

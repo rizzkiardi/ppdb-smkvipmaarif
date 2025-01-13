@@ -12,11 +12,6 @@ class StatusSiswa extends Model
     protected $table = 'status_siswa';
     protected $guarded = [];
 
-    // public function calonSiswas(): HasMany
-    // {
-    //     return $this->HasMany(CalonSiswa::class);
-    // }
-
     public function calonSiswa()
     {
         return $this->belongsTo(CalonSiswa::class, 'calon_siswa_id');

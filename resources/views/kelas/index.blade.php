@@ -2,13 +2,6 @@
 
 @section('content')
 <div class="px-6 py-12 max-w-screen-xl xl:mx-auto">
-    {{-- <a href="{{ route('kelas.create') }}" class="py-2 px-6 text-sm rounded-md bg-[#00AA5B] text-white" 
-    @if($kelasExist) onclick="event.preventDefault();" @endif>
-    Buat Kelas
-    </a>
-    @if($kelasExist)
-        <span class="text-sm text-red-500 italic ml-5">Kelas sudah dibuat</span>
-    @endif --}}
     <a href="{{ route('kelas.create') }}" 
    class="py-2 px-6 text-sm rounded-md text-white 
           {{ $kelasExist ? 'bg-gray-400 cursor-not-allowed' : 'bg-[#00AA5B]' }}" 

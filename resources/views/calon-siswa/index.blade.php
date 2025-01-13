@@ -17,7 +17,6 @@
                             <div class="py-1 px-4 mb-4 mt-1 text-sm text-red-800 rounded-lg bg-red-50" role="alert">
                                 <span class="text-sm italic">{{ $message }}</span>
                             </div>
-                            {{-- <span class="text-sm text-red-800 italic">{{ $message }}</span>    --}}
                         @enderror
                     </div>
                     

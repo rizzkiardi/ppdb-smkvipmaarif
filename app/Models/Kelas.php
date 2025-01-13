@@ -12,11 +12,6 @@ class Kelas extends Model
     protected $table = 'kelas';
     protected $guarded = [];
 
-    // public function siswas()
-    // {
-    //     return $this->hasMany(CalonSiswa::class, 'kelas_id');
-    // }
-
     public function siswas()
     {
         return $this->hasMany(DaftarUlang::class, 'kelas_id');

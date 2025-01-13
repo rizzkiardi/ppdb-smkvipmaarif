@@ -46,12 +46,6 @@ class User extends Authenticatable
         ];
     }
 
-    // public function statusSiswa()
-    // {
-    //     return $this->hasOne(StatusSiswa::class, 'calon_siswa_id');
-    // }
-
-
     public function calonSiswa()
     {
         return $this->hasOne(CalonSiswa::class);

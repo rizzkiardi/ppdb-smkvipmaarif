@@ -60,7 +60,8 @@ class KelasController extends Controller
             }
         }
 
-        return redirect()->back()->with('success', 'Kelas berhasil dibuat.');
+        notify()->success('Kelas Berhasil di Buat.');
+        return redirect()->back();
     }
 
 
@@ -86,7 +87,9 @@ class KelasController extends Controller
         // Hapus kelas
         $kelas->delete();
 
-        return redirect()->route('kelas')->with('success', 'Kelas berhasil dihapus.');
+        // return redirect()->route('kelas')->with('success', 'Kelas berhasil dihapus.');
+        notify()->success('Kelas Berhasil di Hapus.');
+        return redirect()->route('kelas');
     }
 
 

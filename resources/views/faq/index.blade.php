@@ -8,10 +8,6 @@
         <a href="{{ route('faq.create')  }}" class="py-2 px-6 text-sm rounded-md bg-[#00AA5B] text-white">Buat FAQ</a>
     </div>
 
-    {{-- @if (session('success'))
-        <div class="alert alert-success">{{ session('success') }}</div>
-    @endif --}}
-
     <div class=" overflow-x-auto shadow-md sm:rounded-lg mb-5">
         <table data-tab-for="order" data-page="active" class="w-full min-w-[540px] text-sm text-left border-t border-slate-100 rtl:text-right text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">

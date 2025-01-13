@@ -136,15 +136,6 @@ class CalonSiswaController extends Controller
         }
     }
     
-
-    // public function show()
-    // {
-    //     $calonsiswas = CalonSiswa::with('statusSiswa')->get();
-    //     $calonsiswas = CalonSiswa::with('statusSiswa')->paginate(20);
-
-    //     return view('calon-siswa.show', compact('calonsiswas'));
-    // }
-
     public function show(Request $request)
     {
         // Ambil keyword pencarian dari request
