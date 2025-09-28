@@ -10,7 +10,7 @@
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
     {{-- <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}"> --}}
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/favicon/favicon-16x16.png') }}">
     <link rel="manifest" href="../site.webmanifest">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
@@ -248,22 +248,6 @@
                 src="{{ auth()->user()->image ? asset('storage/images/' . auth()->user()->image) : asset('storage/images/default.png') }}" 
                 alt="User Image" 
                 width="30">
-                {{-- <li class="dropdown ml-3">
-                    <button type="button" class="dropdown-toggle flex items-center">
-                        <img src="https://placehold.co/32x32" alt="" class="w-8 h-8 rounded block object-cover align-middle">
-                    </button>
-                    <ul class="dropdown-menu shadow-md shadow-black/5 z-30 hidden py-1.5 rounded-md bg-white border border-gray-100 w-full max-w-[140px]">
-                        <li>
-                            <a href="#" class="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50">Profile</a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50">Settings</a>
-                        </li>
-                        <li>
-                            <a href="#" class="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50">Logout</a>
-                        </li>
-                    </ul>
-                </li> --}}
             </ul>
         </div>
         @yield('content')
@@ -366,6 +350,46 @@
 
                 // Redirect ke halaman notifikasi
                 window.location.href = "{{ route('notifications') }}";
+            });
+        });
+    </script>
+
+    <script>
+        const sidebarToggle = document.querySelector(".sidebar-toggle");
+        const sidebarOverlay = document.querySelector(".sidebar-overlay");
+        const sidebarMenu = document.querySelector(".sidebar-menu");
+        const main = document.querySelector(".main");
+        if (window.innerWidth < 768) {
+            main.classList.toggle("active");
+            sidebarOverlay.classList.toggle("hidden");
+            sidebarMenu.classList.toggle("-translate-x-full");
+        }
+        sidebarToggle.addEventListener("click", function (e) {
+            e.preventDefault();
+            main.classList.toggle("active");
+            sidebarOverlay.classList.toggle("hidden");
+            sidebarMenu.classList.toggle("-translate-x-full");
+        });
+        sidebarOverlay.addEventListener("click", function (e) {
+            e.preventDefault();
+            main.classList.add("active");
+            sidebarOverlay.classList.add("hidden");
+            sidebarMenu.classList.add("-translate-x-full");
+        });
+        document.querySelectorAll(".sidebar-dropdown-toggle").forEach(function (item) {
+            item.addEventListener("click", function (e) {
+                e.preventDefault();
+                const parent = item.closest(".group");
+                if (parent.classList.contains("selected")) {
+                    parent.classList.remove("selected");
+                } else {
+                    document
+                        .querySelectorAll(".sidebar-dropdown-toggle")
+                        .forEach(function (i) {
+                            i.closest(".group").classList.remove("selected");
+                        });
+                    parent.classList.add("selected");
+                }
             });
         });
     </script>

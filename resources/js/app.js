@@ -7,6 +7,7 @@ import "laravel-datatables-vite";
 import Alpine from "alpinejs";
 
 import "animate.css";
+import "../css/app.css";
 
 window.Alpine = Alpine;
 

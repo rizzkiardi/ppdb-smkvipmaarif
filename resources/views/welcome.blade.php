@@ -8,20 +8,21 @@
         <title>PPDB | SMK VIP Maarif NU 1 Kemiri</title>
 
         <!-- Meta SEO -->
-        <meta name="title" content="Landwind - Tailwind CSS Landing Page">
-        <meta name="description" content="Get started with a free and open-source landing page built with Tailwind CSS and the Flowbite component library.">
+        <meta name="title" content="PPDB - SMK VIP Maarif NU 1 Kemiri">
+        <meta name="description" content="Proses Pendaftaran Peserta Didik Baru Tahun Ajaran 2024 2025.">
         <meta name="robots" content="index, follow">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="language" content="English">
         <meta name="author" content="Themesberg">
 
         <!-- Social media share -->
-        <meta property="og:title" content=Landwind - Tailwind CSS Landing Page>
+        <meta property="og:title" content=PPDB - SMK VIP Maarif NU 1 Kemiri Landing Page>
         <meta property="og:site_name" content=Themesberg>
         <meta property="og:url" content=https://https://demo.themesberg.com/landwind/>
-        <meta property="og:description" content=Get started with a free and open-source landing page for Tailwind CSS built with the Flowbite component library featuring dark mode, hero sections, pricing cards, and more.>
+        <meta property="og:description" content=Proses Pendaftaran Peserta Didik Baru Tahun Ajaran 2024 2025.>
         <meta property="og:type" content="">
-        <meta property="og:image" content=https://themesberg.s3.us-east-2.amazonaws.com/public/github/landwind/og-image.png>
+        {{-- <meta property="og:image" content=https://themesberg.s3.us-east-2.amazonaws.com/public/github/landwind/og-image.png> --}}
+        <meta property="og:image" content="{{ asset('assets/image/logo smk vip maarif nu 1kemiri.jpg') }}">
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@themesberg" />
         <meta name="twitter:creator" content="@themesberg" />
@@ -29,11 +30,14 @@
         <!-- Favicon -->
         <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
         {{-- <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}"> --}}
-        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/favicon/favicon-16x16.png') }}">
         <link rel="manifest" href="../site.webmanifest">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
         <link href="../output.css" rel="stylesheet">
+        {{-- <link rel="stylesheet" href="{{ asset('../css/style.css') }}"> --}}
+        <link rel="stylesheet" href="css/style.css">
+
         <script async defer src="https://buttons.github.io/buttons.js"></script>
 
         <!-- Lightbox2 CSS -->
@@ -41,6 +45,38 @@
     
         @vite(['resources/css/app.css','resources/js/app.js'])
 
+        {{-- <style>
+            .login {
+                color:#fff;
+                background-color: #00AA5B;
+                border-radius: 5px;
+            }
+
+            @media (max-width: 650px) {
+                .login {
+                    padding-top: 2px;
+                    padding-bottom: 2px;
+                }
+                .button-nav {
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-end;
+                    /* border: 1px solid red */
+                }
+
+                .akreditasi {
+                    width:100px;
+                }
+
+                .narahubung, .smkbisa  {
+                    display:hidden;
+                }
+
+                footer {
+                    flex-direction: column;
+                }
+            }
+        </style> --}}
     </head>
     <body>
         <header class="fixed w-full shadow-sm z-50">
@@ -55,12 +91,12 @@
                         </div>
                     </a>
                     {{-- <img src="{{ asset('assets/image/akreditasi-b.png') }}" alt="" width="50px"> --}}
-                    <div class="flex items-center lg:order-2">
+                    <div class="button-nav flex items-center lg:order-2">
                         
                         <!-- <a href="#" class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Log in</a> -->
                         {{-- <a href="{{ route('login') }}" class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">Masuk</a> --}}
                         @if (Route::has('login'))
-                            <div class="-mx-3 flex flex-1 justify-end">
+                            <div class=" mx-3 flex flex-1 justify-end">
                                 @auth
                                     <a
                                         href="{{ url('/dashboard') }}"
@@ -71,7 +107,7 @@
                                 @else
                                     <a
                                         href="{{ route('login') }}"
-                                        class="text-white bg-[#00AA5B] hover:bg-[#00AA5B] font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-[#00AA5B] dark:hover:bg-[#00AA5B] focus:outline-none dark:focus:ring-blue-800"
+                                        class="login text-white bg-[#00AA5B] hover:bg-[#00AA5B] font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-[#00AA5B] dark:hover:bg-[#00AA5B] focus:outline-none"
                                     >
                                         Masuk
                                     </a>
@@ -87,11 +123,11 @@
                                 @endauth
                             </div>
                         @endif
-                        {{-- <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
+                        <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
                             <span class="sr-only">Open main menu</span>
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
                             <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                        </button> --}}
+                        </button>
                     </div>
                     <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
                         <ul class="flex flex-col mt-4  lg:flex-row lg:space-x-8 lg:mt-0">
@@ -119,7 +155,7 @@
         <section id="beranda" class=" mx-auto bg-cover bg-center bg-no-repeat bg-blend-multiply rounded-b-lg h-screen flex items-center justify-center" style="background-image: url({{ asset('assets/image/halaman-sekolah.jpg') }})"> 
             <div class="animate__animated animate__pulse absolute top-[150px] right-[100px] shadow-sm max-sm:top-[80px] max-sm:right-[50px]">
                 {{-- <img src="{{ asset('assets/image/logo-SMK BISA.png') }}" alt="" width="300px"> --}}
-                <img  class="max-sm:w-[125px]" src="{{ asset('assets/image/akreditasi-b.png') }}" alt="" width="200px">
+                <img class="akreditasi max-sm:w-[125px]" src="{{ asset('assets/image/akreditasi-b.png') }}" alt="" width="200px">
             </div>
             <div class="px-4 mx-auto max-w-screen-xl text-center">
                 {{-- <p class="mb-2 text-xl font-semibold text-white lg:text-xl sm:px-16 lg:px-48">Tahun Ajaran 2024/2025</p> --}}
@@ -131,22 +167,22 @@
                     </a>
                 </div>
             </div>
-            <div class="absolute px-3 py-2 rounded-md bottom-[20px] left-[100px] shadow-sm max-sm:bottom-[95px] max-sm:left-[10px] bg-[#fff] bg-opacity-50">
+            {{-- <div class="narahubung absolute px-3 py-2 rounded-md bottom-[20px] left-[100px] shadow-sm max-sm:bottom-[95px] max-sm:left-[10px] bg-[#fff] bg-opacity-50">
                 <p class="font-bold text-gray-800 text-sm border-b-[3px] border-[#00AA5B]">Narahubung Admin PPDB</p>
                 <p class="font-bold text-gray-800 text-sm">Bapak Sigit Rudianto 0822-6506-1366</p>
                 <p class="font-bold text-gray-800 text-sm">Bapak Arsyad 0852-9321-0624</p>
-            </div>
+            </div> --}}
         </section>
 
         <section class="">
-            <div class="max-w-screen-xl px-4 py-8 mx-auto lg:py-20 lg:px-6">
+            <div class="max-sm:hidden max-w-screen-xl px-4 py-8 mx-auto lg:py-20 lg:px-6">
                 <div class="max-w-screen-md mx-auto mb-8 text-center lg:mb-12">
-                    <div class="flex gap-20 justify-center max-sm:gap-3">
+                    {{-- <div class="smkbisa flex gap-20 justify-center max-sm:gap-3">
                         <img class="logo1 max-md:w-[100px]" src="{{ asset('assets/image/logo-SMK BISA.png') }}" alt="" width="200px">
                         <img class="logo1 max-md:w-[100px]" src="{{ asset('assets/image/logo-SMK PK.png') }}" alt="" width="200px">
                         <img class="logo2 max-md:w-[100px]" src="{{ asset('assets/image/logo-LP MAARIF NU.png') }}" alt="" width="200px">
                         <img class="logo2 max-md:w-[100px]" src="{{ asset('assets/image/logo-nasmoco-trans.png') }}" alt="" width="200px">
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </section>
@@ -906,18 +942,10 @@
             </div>
         </section>
         <!-- End faq -->
-
-        {{-- <div class="arrow-up" onclick="scrollToTop()">
-            <div class="up">
-              <a href="#">
-                <img src="icons/arrow-up-solid.svg" alt="" width="30" />
-              </a>
-            </div>
-        </div> --}}
         
         <footer class="bg-gray-50 dark:bg-gray-800 ">
             <div class="max-w-screen-xl p-4 py-6 mx-auto lg:py-8 md:p-8 lg:p-10 ">                
-                <div class="flex justify-between gap-10 max-sm:block space-y-5">
+                <div class="flex justify-between gap-10 max-sm:block space-y-5 max-sm:w-full max-sm:column">
                     <div class="">
                         <a href="/" class="flex items-center">
                             <img src="{{ asset('assets/image/logo smk vip maarif nu 1kemiri.jpg') }}" alt="" class="w-20 rounded object-cover">
@@ -1022,6 +1050,13 @@
                     icon.classList.remove('rotate-180'); // Kembali ke posisi semula saat ditutup
                     body.previousElementSibling.setAttribute('aria-expanded', 'false');
                 }
+            }
+
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth", // Animasi smooth saat gulir ke atas
+                });
             }
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

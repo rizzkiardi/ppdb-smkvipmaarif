@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Carbon\Carbon;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -35,5 +36,9 @@ class AppServiceProvider extends ServiceProvider
     
             $view->with('unreadCount', $unreadCount);
         });
+
+        if(config('app.env') === 'production') {
+            URL::forceScheme('https');
+        }
     }
 }
